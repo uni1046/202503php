@@ -1,0 +1,115 @@
+p {
+    font-size: 60px;
+}
+
+body {
+    margin: 20px;
+}
+/*body（整个页面的内容）margin页边距*/
+/*所有带p元素的样式字体大小为：*/
+
+.footer {
+    background-color: dimgray;
+    width: 300px;
+    height: 100px;
+}
+
+
+.div2 {
+    margin-left: 30px;
+}
+
+.div3 {
+    width: 300px;
+    height: 100px;
+    background-color: darkgreen;
+}
+
+.brother-selector {
+    border: 1px solid red;
+    width: 300px;
+    height: 100px;
+}
+
+#content {
+    background-color: brown;
+    width: 200px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+#div3 {
+    background-color: darkorange;
+    width: 300px;
+    height: 100px;
+}
+
+/*后代选择器 所有子集都受影响*/
+.header h1 {
+    color: red;
+}
+/*子选择器 只有第一层子集受影响*/
+.header > p {
+    color: green;
+}
+/*相邻兄弟选择器 只有div3受影响*/
+.div2 + .div3 {
+    margin-left: 30px;
+}
+/*通用兄弟选择器 里面都受影响*/
+.div5 ~ div {
+    background-color: hotpink; 
+    margin-left: 30px; 
+}
+
+/*属性选择器*/
+input[type="text"] {
+    border: 10px solid red; /*设置边框, 宽度为 10px 实线 红色*/
+}
+
+input[type="email"] {
+    background-color: #00FFFF;
+}
+
+[title] {
+    background-color: #FF3333;
+}
+
+input {
+    width: 500px;
+    height: 80px;
+    text-align: center; /*字体居中*/
+}
+
+[data-custom="1000"] {
+    background-color: #FFCC00;
+}
+
+/*未访问的链接*/
+.google-link:link {
+    color: #FF0000;
+}
+
+/*已访问的链接*/
+.google-link:visited {
+    color: #00FF00;
+}
+
+/*鼠标悬停的链接*/
+.google-link:hover {
+    color: #0000FF;
+}
+
+/*被选中的链接*/
+.google-link:active {
+    color: #FF00FF;
+}
+/*鼠标悬停*/
+input:hover {
+    background-color: #FFCC00;
+}
+
+/*获得焦点*/
+input:focus {
+    background-color: #FF00FF;
+}
