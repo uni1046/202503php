@@ -1,0 +1,47 @@
+.mypage {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mypage img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    margin-bottom: 5px;
+}
+
+.mypage h1 {
+    font-size: 20px;
+    color: #333;
+    font-family:"NIAGSOL" ;
+}
+
+.mypage p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.mypage a {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #428fe2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+.intro {
+    list-style: none; 
+}
