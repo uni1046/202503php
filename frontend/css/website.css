@@ -1,0 +1,62 @@
+body {
+    background-image: url('./bg.jpg');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+}
+
+.pagename {
+    font-family:'SNAP____';
+    color: #ffffff;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    width: 100px; 
+    height: auto; 
+    display: block;
+    margin: 10px auto;
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+
+.title{
+    font-family:'造字工房悦圆体';
+    color: #838e91;
+}
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background-color: #c4dadc;
+    color: white; 
+    position: sticky;
+    top: 0; 
+}
+
+.links a {
+    text-decoration: none; 
+    color: white; 
+    padding: 5px 10px; 
+    transition: background 0.3s; 
+}
+
+.links a:hover {
+    background-color: #51c4c8; 
+    border-radius: 5px; 
+}
+.links {
+    display: flex;
+}
+
+  
