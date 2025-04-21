@@ -190,7 +190,7 @@ echo "<br>";
 $assoc = ['a' => 1, 'b' => 2, 'c' => 3];
 $onlyA = array_filter($assoc, fn($key) => $key === 'a', ARRAY_FILTER_USE_KEY);
 print_r($onlyA); 
-echo "<br>";
+
 
 $users = [
     ['id' => 1, 'username' => '张三', 'is_admin' => 1, 'register_from' => 1],
@@ -215,3 +215,12 @@ $weather = '晴天';
         echo "The next F1 race will be in " . $city . "on" . $date . " ssas " . $weather;
 };
     $anounce($city, $date, $weather);
+    echo "<br>";
+
+$text = 'The next F1 race will be in {{ city }} on {{ date }}.';
+$search = ["{{ city }}", "{{ date }}"];
+$replace = ["Melbourne", "2022-04-08"];
+$newText2 = str_replace($search, $replace, $text, $count);
+echo $newText2; 
+echo "<br>";
+
