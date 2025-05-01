@@ -99,3 +99,109 @@ class Dog extends Animal {
 let dog = new Dog('旺财');
 dog.sayHello();
 dog.bark();
+
+// JS 中的异步编程
+// 同步代码, 顺序执行
+// 异步代码, 不会阻塞后续代码执行
+Promise, async/await, callback
+
+let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+       resolve('Hello, Promise');
+    }, 2000); 
+ });
+
+ promise.then((value) => {
+     console.log(value);
+ });
+
+console.log('Promise called');
+
+async function fetchData() {
+     // 通过 fetch 获取数据
+     let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+/     // 转换为 JSON 格式
+     let data = await response.json();
+     console.log(data);
+ }
+
+ fetchData().then(r => console.log('fetchData done'));
+
+console.log('fetchData called');
+
+// 错误处理
+try {
+    $element = document.getElementById('not-exist');
+    $element.addEventListener('click', function () {
+        alert('元素被点击了');
+    });
+    console.log($element);
+} catch (error) {
+    console.error('发生错误: ' + error.message);
+} finally {
+    // 无论是否发生错误，都会执行
+    console.log('finally');
+}
+
+// 自定义错误
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error('除数不能为 0. (这是一个自定义错误)');
+    }
+    return a / b;
+}
+
+try {
+    console.log(divide(10, 0));
+} catch (error) {
+    console.error('发生错误: ' + error.message);
+}
+
+
+// DOM 操作
+let heading = document.getElementById('heading');
+console.log(heading.textContent);
+
+let items = document.getElementsByClassName('item');
+// console.log(items);
+// console.log(items[0].textContent);
+for (let item of items) {
+    if (item.textContent === 'PHP') {
+        item.style.color = 'red';
+    }
+    console.log(item.textContent);
+}
+
+let liElement = document.getElementsByTagName('li'); 
+let liElementPython = document.getElementsByTagName('li')[1]; 
+liElementPython.style.color = 'blue';
+
+let itemElementJava = document.querySelector('.item'); /
+itemElementJava.style.color = 'green';
+itemElementJava.textContent = 'Go';
+// let itemElementGo = itemElementJava
+
+let itemElements = document.querySelectorAll('.item'); 
+let itemElementJavaScript = document.querySelectorAll('.item')[2]; 
+itemElements.forEach(function (item) {
+    console.log(item.textContent);
+});
+itemElementJavaScript.style.color = 'purple';
+
+// JS操作DOM
+let getUserinfoElement = document.getElementById('get-userinfo');
+getUserinfoElement.addEventListener('click', function () {
+    
+    let userinfo = {
+        username: 'LuStormstout', email: 'lustromstout@gmail.com'
+    }
+
+
+    let userinfoElement = document.getElementById('userinfo');
+    for (let key in userinfo) {
+        let liElement = document.createElement("li")
+        liElement.textContent = key + " : " + userinfo[key];
+        userinfoElement.appendChild(liElement)
+        console.log('key: ' + key + " value: " + userinfo[key])
+    }
+});

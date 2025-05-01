@@ -203,24 +203,50 @@ $usersData = array_map(function($user) {
     return $user;},$users);
 
 
-    
-    
-    
-    
-$city = 'Melbourne';
-$date = '2022-04-08';
-$weather = '晴天';  
+$numbers = [1, 2, 3, 4, 5];
 
- $anounce = function ($city, $date, $weather) {
-        echo "The next F1 race will be in " . $city . "on" . $date . " ssas " . $weather;
-};
-    $anounce($city, $date, $weather);
-    echo "<br>";
-
-$text = 'The next F1 race will be in {{ city }} on {{ date }}.';
-$search = ["{{ city }}", "{{ date }}"];
-$replace = ["Melbourne", "2022-04-08"];
-$newText2 = str_replace($search, $replace, $text, $count);
-echo $newText2; 
+$sum = array_reduce($numbers, fn($carry, $item) => $carry + $item, 0);
+ // 初始值为 0
+echo ("Sum: " . $sum);
 echo "<br>";
+$string = array_reduce($numbers, fn($carry, $item) => $carry . "-" . $item, "Numbers:"); 
+// 初始值为 "Numbers:"
+echo ("\nString: " . $string); 
+echo "<br>";
+
+$fruits = ['a' => 'apple', 'b' => 'banana'];
+array_walk($fruits, function($value, $key) {
+    echo ($key . " => " . $value . "\n");
+});
+echo "<br>";
+
+$numbers = [1, 2, 3];
+array_walk($numbers, function(&$value, $key) {
+    $value *= 10;
+});
+print_r($numbers); 
+echo "<br>";    
+
+$numbers = [3, 1, 4, 1, 5, 9];
+sort($numbers);
+print_r($numbers); 
+
+$scores = ['Alice' => 85, 'Bob' => 92, 'Charlie' => 78];
+asort($scores); 
+print_r($scores);
+
+arsort($scores); 
+print_r($scores);
+
+$files = ['img12.png', 'img10.png', 'img2.png', 'img1.png'];
+natsort($files); // 自然排序
+print_r($files);
+
+$ages = ['Charlie' => 30, 'Alice' => 25, 'Bob' => 35];
+ksort($ages); // 按名字键升序
+print_r($ages); // 输出: Array ( [Alice] => 25 [Bob] => 35 [Charlie] => 30 )
+
+krsort($ages); // 按名字键降序
+print_r($ages); // 输出: Array ( [Charlie] => 30 [Bob] => 35 [Alice] => 25 )
+
 

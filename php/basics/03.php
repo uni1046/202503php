@@ -61,3 +61,19 @@ function showMessage($message, $name = "访客") {
 
 showMessage("今天天气不错！");        
 showMessage("该吃饭了！", "张三"); 
+
+function addNumbers(...$numbers) { 
+    $total = 0;
+    foreach ($numbers as $num) {
+        $total += $num;
+    }
+    return $total;
+}
+
+echo addNumbers(1, 2, 3);           
+echo "\n";
+echo addNumbers(10, 20, 30, 40, 50); 
+echo "\n";
+echo addNumbers(5);               
+echo "\n";
+echo addNumbers();                

@@ -1,0 +1,163 @@
+body {
+    margin: 0; 
+    padding: 0; 
+}
+
+.content-p {
+    color: #ff0040;
+    background-color: #c0ffff;
+}
+
+.header{
+    height: 80px;
+    width: auto;
+    background-color: #606060;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    height: 700px;
+    background-color: #ccccff;
+}
+
+.content-left-inner {
+    width: 50%;
+    height: 400px;
+    background-color: #ff8000;
+    margin-left: 100px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 5);
+    text-align: center;
+}
+
+.content-left-inner-h1{
+    text-shadow:  4px 4px 3px gray;
+}
+
+.foot-custom1 {
+    margin: 10px;
+    font-size: 18px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.font-custom-2 {
+    font-size: 50px; 
+    font-weight: bold; 
+    font-family: "BiauKaiTC", Microsoft YaHei, serif; 
+    text-align: center; 
+}
+
+.right {
+    float: right;
+    width: 50%;
+    height: 700px;
+    background-color: #00ffff;
+    background-image: url(../html/电影01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 2px solid #FF9966;
+    border-top:  2px dashed #FF9966;
+    border-radius: 20px;
+}
+
+.content {
+    width: auto;
+    height: 1000px; 
+    background-color: #808080; 
+    margin: 10px; 
+    padding: 10px; 
+    border: 10px solid #CCFFFF; 
+}
+
+.footer {
+    background-color: #606060; 
+    height: 500px; 
+    width: auto; 
+    margin: 10px; 
+}
+
+.account {
+    flex: 3;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.footer-inner-left {
+    width: 200px;
+    height: 200px;
+    background-color: #FF8000;
+    text-align: center;
+
+    position: relative; 
+    top: 10px; 
+    left: 10px; 
+}
+
+.footer-inner-right {
+    width: 200px;
+    height: 200px;
+    background-color: #FF8000;
+
+    position: absolute; 
+    top: 1137px; 
+    
+    left: 230px; 
+}
+
+.footer-inner-contact {
+    text-align: center; 
+    width: 200px;
+    height: 50px;
+    background-color: #FF8000;
+
+    display: flex; 
+    align-items: center; 
+
+    position: fixed; 
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.footer-inner-contact a {
+    margin-left: 65px;
+    text-decoration-line: none;
+}
+
+.footer-inner-bottom {
+    margin-top: 100px;
+}
+
+.footer-inner-bottom-btn1 {
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+
+    background-color: #FF3333;
+    transition: background-color 2s ease;
+}
+
+.footer-inner-bottom-btn1:hover {
+    background-color: #40FF40;
+}
+/*以上实现buttom悬停变绿*/
+
+.footer-inner-left > p::before {
+    content: '🎉'; 
+}
+
+.footer-inner-left > p::after {
+    content: '🎉'; /* 设置内容 */
+}
+
+
+

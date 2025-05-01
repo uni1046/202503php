@@ -25,7 +25,7 @@ try {
 }
 
 try {
-    $sql = "SELECT id, user FROM studentage WHERE age = '27'";
+    $sql = "SELECT age FROM studentage WHERE age = '27'";
     $stmt = $pdo->query($sql);
 
     echo "<h4>Students age 27:</h4>";

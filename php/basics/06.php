@@ -217,7 +217,7 @@ echo "<pre>All info: ";
 print_r($infoAll);
 echo "</pre>";
 
-echo(DIRECTORY_SEPARATOR); // 输出: /
+echo(DIRECTORY_SEPARATOR); // 输出: 
 
 $file = './06.php';
 $dir = 'E:\laragon\www\202503php\php\basics';
