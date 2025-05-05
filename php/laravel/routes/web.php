@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -15,3 +17,6 @@ Route::get('/register', [UsersController::class, 'create'])->name('register');
 Route::post('/register', [UsersController::class, 'store'])->name('register.store');
 
 Route::get('/users/{id?}', [UsersController::class, 'show'])->name('users.show');
+
+Route::resource('categories', CategoriesController::class);
+Route::resource('products', ProductsController::class);
