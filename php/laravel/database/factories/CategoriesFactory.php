@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Categories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Categories>
+ * @extends Factory<Categories>
  */
 class CategoriesFactory extends Factory
 {
@@ -17,8 +18,12 @@ class CategoriesFactory extends Factory
     public function definition(): array
     {
         return [
-            //生成分类的标签
-            'name' => $this->faker->unique()->word,
+            // 随机生成一个唯一的单词作为分类名称
+            'name' => $this->faker->unique()->word(),
+
+//            'name' => $this->faker->unique()->randomElement([
+//                'Technology', 'Health', 'Education', 'Travel', 'Finance',
+//            ]),
         ];
     }
 }

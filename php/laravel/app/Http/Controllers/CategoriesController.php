@@ -13,18 +13,18 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():Factory|Application|View
+    public function index(): Factory|Application|View
     {
-        $categories = Categories::all();
-        return view('categories.index', ['categories' => $categories]);
+        $categories = Categories::paginate($this->perPage);
+        return view('categories.index', compact('categories'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): Factory|Application|View
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -32,7 +32,8 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'store';
+        dd($request->all());
     }
 
     /**
@@ -46,9 +47,9 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categories $categories)
+    public function edit(Categories $category): Factory|Application|View
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -56,7 +57,8 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, Categories $categories)
     {
-        //
+        echo 'update';
+        dd($request->all());
     }
 
     /**
