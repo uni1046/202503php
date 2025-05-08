@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- *
+ * 
  *
  * @property int $id
  * @property string $name 名称
@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Products whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Products whereStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Products whereUpdatedAt($value)
+ * @property-read \App\Models\Categories|null $category
  * @mixin \Eloquent
  */
 class Products extends Model

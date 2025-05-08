@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
 
 // This is the home page of the application
 Route::get('/', [IndexController::class, 'home'])->name('home');
@@ -46,3 +50,7 @@ Route::resource('products', ProductsController::class);
 // ...
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
+Route::resource('posts', PostController::class);
+Route::resource('authors', AuthorController::class);
+Route::resource('tags', TagController::class);
+
