@@ -8,18 +8,22 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Event;
 
 class PostSeeder extends Seeder
 {
+    use WithoutModelEvents;
+
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        if(Author::count() ==0) {
+        // 确保有作者和标签存在
+        if (Author::count() == 0) {
             $this->call(AuthorSeeder::class);
         }
-        if(Tag::count() ==0) {
+        if (Tag::count() == 0) {
             $this->call(TagSeeder::class);
         }
 
@@ -29,10 +33,13 @@ class PostSeeder extends Seeder
         if ($authors->isEmpty()) {
             $this->command->info('No authors found, skipping post creation.');
             return;
-    }
+        }
+
         Post::factory()->count(50)->make()->each(function ($post) use ($authors, $tags) {
+            // 随机分配一个作者
             $post->author_id = $authors->random()->id;
             $post->save(); // 保存帖子以获取 ID
+
             // 为帖子创建元数据
             Metadata::factory()->create(['post_id' => $post->id]);
 
@@ -44,5 +51,4 @@ class PostSeeder extends Seeder
             }
         });
     }
-
 }
